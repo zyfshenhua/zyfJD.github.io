@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var dom = document.querySelector('div');
+
+        /*touchstart 手指刚刚触摸到屏幕的时候会触发*/
+        dom.addEventListener('touchstart',function(e){
+            console.log('touchstart');
+            console.log(e.touches);
+        });
+
+        /*touchmove 手指刚刚触摸到屏幕之后  不停的触摸屏幕的时候  滑动屏幕的时候  会不停的触发*/
+        dom.addEventListener('touchmove',function(e){
+            console.log('touchmove');
+            console.log(e);
+        });
+
+        /*touchend 手指离开屏幕的时候会触发*/
+        dom.addEventListener('touchend',function(e){
+            console.log('touchend');
+            console.log(e);
+        });
+
+
+    </script>
+</body>
+</html>

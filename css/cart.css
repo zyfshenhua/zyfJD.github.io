@@ -1,0 +1,292 @@
+body{
+    background: #f5f5f5;
+    min-width: 320px;
+}
+.jd_topBar{
+    position: static;/*默认*/
+}
+/*安全提示*/
+.jd_safeTip{
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+}
+.jd_safeTip p{
+    height: 34px;
+    line-height: 34px;
+    position: relative;
+    display: inline-block;
+    padding-left: 23px;
+}
+.jd_safeTip p:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    height: 18px;
+    width: 18px;
+    background: url("../images/safe_icon.png") no-repeat;
+    background-size: 18px 18px;
+}
+
+/*公用复选框*/
+.jd_check_box{
+    width: 40px;
+    height: 34px;
+    padding: 7px 10px;
+    background: url("../images/shop-icon.png") no-repeat;
+    background-size: 50px 100px;
+    background-origin: content-box;
+    background-clip: content-box;
+    display: block;
+}
+.jd_check_box[checked]{
+    background-position: -25px 0;
+}
+
+/*公用的两栏*/
+.box_left{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+}
+.box_right{
+    padding-left: 40px;
+}
+
+/*店铺*/
+.jd_shop{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-top: 10px;
+    background: #fff;
+}
+.jd_shop .jd_shop_tit{
+    height: 34px;
+    line-height: 34px;
+    position: relative;
+}
+.jd_shop .jd_shop_tit .box_right img{
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-top: 9px;
+}
+.jd_shop .jd_shop_tit .box_right span{
+    font-size: 15px;
+    float: left;
+    margin-left: 5px;
+}
+.jd_shop .jd_shop_tit .box_right .f_right{
+    color: #d8505c;
+    font-size: 12px;
+}
+
+.jd_shop .jd_shop_con{}
+.jd_shop .jd_shop_con .jd_product{
+    border-top: 1px solid #ccc;
+    position: relative;
+}
+
+/*商品模块*/
+.jd_product{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 100px;
+}
+.jd_product .product_img{
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+.jd_product .product_img img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.jd_product .product_info{
+    overflow: hidden;
+    padding: 0 10px;
+}
+.jd_product .product_info .name{
+    height: 32px;
+    line-height: 16px;
+    display: block;
+    overflow: hidden;
+}
+.jd_product .product_info .price{
+    color: #d8505c;
+    font-size: 12px;
+    padding: 5px;
+}
+.jd_product .product_info .option{
+
+}
+
+/*操作模块*/
+.option{}
+.option .option_change{
+    float: left;
+    line-height: 24px;
+    text-align: center;
+}
+.option .option_change span{
+    border: 1px solid #ccc;
+    height: 24px;
+    width: 32px;
+    float: left;
+}
+.option .option_change span:first-child{
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.option .option_change span:last-child{
+     border-top-right-radius: 2px;
+     border-bottom-right-radius: 2px;
+ }
+.option .option_change input{
+    float: left;
+    height: 24px;
+    width: 32px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.option .option_delete{
+    float: right;
+}
+
+.option .option_delete .delete_up{
+    width: 20px;
+    height: 5px;
+    background: url("../images/delete_up.png") no-repeat;
+    background-size: 20px 5px;
+    display: block;
+    margin-left: -1px;
+}
+.option .option_delete .delete_down{
+    width: 18px;
+    height: 18px;
+    background: url("../images/delete_down.png") no-repeat;
+    background-size: 18px 18px;
+    display: block;
+    margin-top: -2px;
+}
+
+/*弹出框*/
+.jd_win{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.jd_win .jd_win_box{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%,-50%,0);
+    -webkit-transform: translate3d(-50%,-50%,0);
+    background: #fff;
+    border-radius: 4px;
+    width: 80%;
+    padding: 0 10px ;
+}
+
+.jd_win .jd_win_box.myBounceInDown{
+    -webkit-animation: myBounceInDown 1s;
+    animation: myBounceInDown 1s;
+}
+
+.jd_win .jd_win_box .tit{
+    font-size: 20px;
+    line-height: 75px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.jd_win .jd_win_box .btn{
+    padding: 10px 0;
+}
+.jd_win .jd_win_box .btn a{
+    float: left;
+    width: 45%;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 36px;
+    text-align: center;
+}
+.jd_win .jd_win_box .btn .cancel{
+    margin-right: 10%;
+    border: 1px solid #ccc;
+    color: #666;
+}
+.jd_win .jd_win_box .btn .submit{
+    background: #d8505c;
+    color: #fff;
+}
+
+/*
+    animate https://github.com/daneden/animate.css 动画库
+*/
+
+/*定义动画*/
+@keyframes myBounceInDown {
+    0%{
+        -webkit-transform:translate3d(-50%,-3000px,0);
+        transform:translate3d(-50%,-3000px,0);
+    }
+
+    60%{
+        -webkit-transform:translate3d(-50%,-45%,0);
+        transform:translate3d(-50%,-45%,0);
+    }
+
+    75%{
+        -webkit-transform:translate3d(-50%,-53%,0);
+        transform:translate3d(-50%,-53%,0);
+    }
+
+    90%{
+        -webkit-transform:translate3d(-50%,-48%,0);
+        transform:translate3d(-50%,-48%,0);
+    }
+
+    100%{
+        -webkit-transform:translate3d(-50%,-50%,0);
+        transform:translate3d(-50%,-50%,0);
+    }
+
+}
+@-webkit-keyframes myBounceInDown {
+    0%{
+        -webkit-transform:translate3d(-50%,-3000px,0);
+        transform:translate3d(-50%,-3000px,0);
+    }
+
+    60%{
+        -webkit-transform:translate3d(-50%,-45%,0);
+        transform:translate3d(-50%,-45%,0);
+    }
+
+    75%{
+        -webkit-transform:translate3d(-50%,-53%,0);
+        transform:translate3d(-50%,-53%,0);
+    }
+
+    90%{
+        -webkit-transform:translate3d(-50%,-48%,0);
+        transform:translate3d(-50%,-48%,0);
+    }
+
+    100%{
+        -webkit-transform:translate3d(-50%,-50%,0);
+        transform:translate3d(-50%,-50%,0);
+    }
+
+}

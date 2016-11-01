@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="../js/common.js"></script>
+<script>
+    var dom = document.querySelector('div');
+    /*
+    * 为什么会有tap
+    * click在移动端响应速度慢  大概300ms的延时
+    * 为了提高移动端点击的响应速度  轻击  tap
+    *
+    * tap 的响应速度要比click快  程度一般响应在150ms内的点击都认为是tap
+    * 1.touchstart touchend 连个事件的时间差  响应时间不超过150ms
+    * 2.没有触发touchmove事件
+    * */
+
+   /* dom.addEventListener('click',function(){
+        console.log('click');
+    });
+
+    dom.addEventListener('touchstart',function(e){
+        console.log('touchstart');
+        console.time('tap');
+    });
+
+    dom.addEventListener('touchmove',function(e){
+        console.log('touchmove');
+    });
+
+    dom.addEventListener('touchend',function(e){
+        console.log('touchend');
+        console.timeEnd('tap');
+    });*/
+
+    itcast.tap(dom,function(e){
+        console.log(e);
+    });
+</script>
+</body>
+</html>
